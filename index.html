@@ -13,13 +13,16 @@
         }
         .header {
             text-align: center;
-            padding: 1rem;
+            padding: 2rem;
+            background-color: #333;
+            color: #fff;
         }
         .menu-icon {
             position: fixed;
             top: 1rem;
             right: 1rem;
             font-size: 24px;
+            color: #333;
             cursor: pointer;
         }
         .menu {
@@ -32,6 +35,17 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .menu a {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .menu a:hover {
+            color: #f76b8a;
         }
         .content {
             max-width: 800px;
@@ -41,13 +55,20 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
+            border-radius: 4px;
         }
         .chapter {
             margin-bottom: 2rem;
             padding: 1rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            background-color: #f76b8a;
             border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            color: #fff;
+        }
+        .chapter:hover {
+            background-color: #d24d77;
         }
         .no-select {
             -webkit-touch-callout: none;
@@ -88,20 +109,20 @@
         &#9776;
     </div>
     <div class="menu" id="menu">
-        <a href="#chapter1">Chapter 1</a><br>
-        <a href="#chapter2">Chapter 2</a><br>
+        <a href="#chapter1">Chapter 1</a>
+        <a href="#chapter2">Chapter 2</a>
         <!-- Add more chapter links here -->
     </div>
     <div class="content">
         <div class="no-select no-inspect" data-before="This is your content">
-            <div class="chapter" id="chapter1">
+            <a href="https://example.com/chapter1" target="_blank" class="chapter" id="chapter1">
                 <h2>Chapter 1</h2>
-                <p>This is the content of Chapter 1.</p>
-            </div>
-            <div class="chapter" id="chapter2">
+                <p>This is a preview of the content of Chapter 1.</p>
+            </a>
+            <a href="https://example.com/chapter2" target="_blank" class="chapter" id="chapter2">
                 <h2>Chapter 2</h2>
-                <p>This is the content of Chapter 2.</p>
-            </div>
+                <p>This is a preview of the content of Chapter 2.</p>
+            </a>
             <!-- Add more chapters here -->
         </div>
     </div>
