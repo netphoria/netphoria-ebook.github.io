@@ -1,99 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset default margin and padding */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
 
-    <title>Guía de Emprendimiento Posapocalíptico</title>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
 
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
-    <link rel="stylesheet" type="text/css" href="https://guiadeemprendimiento.com/assets/css/screen.css?v=fb2bba4767" />
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            background-color: #444;
+            padding: 0.5rem;
+        }
 
-    <meta name="description" content="Un libro por John Freddy Vega">
-    <link rel="canonical" href="https://guiadeemprendimiento.com/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="next" href="https://guiadeemprendimiento.com/page/2/">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:site_name" content="Guía de Emprendimiento Posapocalíptico">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Guía de Emprendimiento Posapocalíptico">
-    <meta property="og:description" content="Un libro por John Freddy Vega">
-    <meta property="og:url" content="https://guiadeemprendimiento.com/">
-    <meta property="og:image" content="https://guiadeemprendimiento.com/content/images/2014/Jan/abu_dhabi-4.jpg">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="1280">
-    
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Guía de Emprendimiento Posapocalíptico">
-    <meta name="twitter:description" content="Un libro por John Freddy Vega">
-    <meta name="twitter:url" content="https://guiadeemprendimiento.com/">
-    <meta name="twitter:image" content="https://guiadeemprendimiento.com/content/images/2014/Jan/abu_dhabi-4.jpg">
+        nav li {
+            margin-right: 1rem;
+        }
 
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Guía de Emprendimiento Posapocalíptico",
-            "url": "https://guiadeemprendimiento.com/",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://guiadeemprendimiento.com/content/images/2014/Jan/logo-1.png",
-                "width": 200,
-                "height": 50
-            }
-        },
-        "url": "https://guiadeemprendimiento.com/",
-        "image": {
-            "@type": "ImageObject",
-            "url": "https://guiadeemprendimiento.com/content/images/2014/Jan/abu_dhabi-4.jpg",
-            "width": 1920,
-            "height": 1280
-        },
-        "mainEntityOfPage": "https://guiadeemprendimiento.com/",
-        "description": "Un libro por John Freddy Vega"
-    }
-    </script>
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
 
-    <!-- Other Meta Tags and Styles -->
-    <!-- ... (omitting for brevity) ... -->
+        main {
+            padding: 2rem;
+        }
 
+        .chapter {
+            margin-bottom: 2rem;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+    </style>
+    <title>My GitHub Pages Website</title>
 </head>
-<body class="home-template nav-closed">
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
 
-    <!-- Navigation -->
-    <!-- ... (omitting for brevity) ... -->
+    <nav>
+        <ul id="chapter-menu"></ul>
+    </nav>
 
-    <div class="site-wrapper">
+    <main>
+        <section id="chapter1" class="chapter">
+            <h2>Chapter 1: Introduction</h2>
+            <p>This is the content of Chapter 1.</p>
+        </section>
 
-        <!-- Header -->
-        <!-- ... (omitting for brevity) ... -->
+        <section id="chapter2" class="chapter">
+            <h2>Chapter 2: The Journey Begins</h2>
+            <p>This is the content of Chapter 2.</p>
+        </section>
 
-        <!-- Main Content -->
-        <main id="content" class="content" role="main">
-            <!-- Articles -->
-            <!-- ... (omitting for brevity) ... -->
+        <!-- Add more chapters as needed -->
+    </main>
 
-            <!-- Pagination -->
-            <!-- ... (omitting for brevity) ... -->
-        </main>
+    <script>
+        const chapters = document.querySelectorAll('.chapter');
+        const chapterMenu = document.querySelector('#chapter-menu');
 
-        <!-- Footer -->
-        <!-- ... (omitting for brevity) ... -->
+        chapters.forEach((chapter, index) => {
+            const anchor = document.createElement('a');
+            anchor.href = `#chapter${index + 1}`;
+            anchor.textContent = chapter.querySelector('h2').textContent;
+            const listItem = document.createElement('li');
+            listItem.appendChild(anchor);
+            chapterMenu.appendChild(listItem);
+        });
 
-    </div>
+        window.addEventListener('scroll', () => {
+            const currentPosition = window.scrollY + 100; // Add a buffer for better accuracy
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="https://guiadeemprendimiento.com/assets/js/jquery.fitvids.js?v=fb2bba4767"></script>
-    <script type="text/javascript" src="https://guiadeemprendimiento.com/assets/js/index.js?v=fb2bba4767"></script>
+            chapters.forEach((chapter, index) => {
+                if (chapter.offsetTop <= currentPosition && chapter.offsetTop + chapter.clientHeight > currentPosition) {
+                    document.querySelector(`#chapter-menu li:nth-child(${index + 1}) a`).classList.add('active');
+                } else {
+                    document.querySelector(`#chapter-menu li:nth-child(${index + 1}) a`).classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
