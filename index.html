@@ -6,41 +6,43 @@
     <title>Your Book Title</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #000;
+            color: #fff;
         }
         .header {
             text-align: center;
             padding: 2rem;
-            background-color: #333;
-            color: #fff;
+            background-color: #000;
+            color: #00ff00;
         }
         .menu-icon {
             position: fixed;
             top: 1rem;
             right: 1rem;
             font-size: 24px;
-            color: #333;
+            color: #00ff00;
             cursor: pointer;
+            z-index: 2;
         }
         .menu {
             display: none;
             position: fixed;
             top: 3rem;
             right: 1rem;
-            background-color: #fff;
+            background-color: #222;
             padding: 1rem;
-            border: 1px solid #ddd;
+            border: 1px solid #00ff00;
             border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
         .menu a {
             display: block;
             margin-bottom: 0.5rem;
-            color: #333;
+            color: #00ff00;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -51,8 +53,8 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #111;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
             border-radius: 4px;
@@ -60,15 +62,16 @@
         .chapter {
             margin-bottom: 2rem;
             padding: 1rem;
-            background-color: #f76b8a;
+            background-color: #222;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
             text-decoration: none;
-            color: #fff;
+            color: #00ff00;
+            display: block;
         }
         .chapter:hover {
-            background-color: #d24d77;
+            background-color: #333;
         }
         .no-select {
             -webkit-touch-callout: none;
@@ -126,5 +129,6 @@
             <!-- Add more chapters here -->
         </div>
     </div>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </body>
 </html>
