@@ -13,16 +13,17 @@
         }
 
         .menu-icon {
-            display: none;
+            display: block;
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #333;
-            color: #fff;
             font-size: 24px;
-            padding: 5px 10px;
             cursor: pointer;
-            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        .menu-icon::before {
+            content: "\2630"; /* Unicode character for the menu icon */
         }
 
         .menu {
@@ -60,6 +61,7 @@
 
         .content {
             padding: 40px;
+            margin-top: 60px;
         }
 
         @media screen and (max-width: 768px) {
@@ -84,7 +86,7 @@
     </style>
 </head>
 <body>
-    <div class="menu-icon">&#9776;</div>
+    <div class="menu-icon" id="menuIcon"></div>
     <nav class="menu">
         <ul class="menu-list">
             <li><a href="#chapter1">Chapter 1</a></li>
@@ -111,7 +113,7 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const menuIcon = document.querySelector(".menu-icon");
+            const menuIcon = document.getElementById("menuIcon");
             const menuList = document.querySelector(".menu");
 
             menuIcon.addEventListener("click", function() {
